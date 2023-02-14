@@ -22,10 +22,8 @@ services:
             - "3003:3000"
         depends_on:
             - backend
-    yipc-mongo-db:
-        image: mongo
-        logging:
-            driver: "none"          
+    db:
+        image: mongo        
         container_name: yipc-mongo-db
         restart: always
         ports:
