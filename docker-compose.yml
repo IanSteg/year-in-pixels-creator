@@ -11,22 +11,14 @@ services:
         volumes:
             - ".:/app"
         ports:
-            - "3031:3000"
+            - "3031:3031"
         depends_on:
             - db
-    frontend:
-        build: .
-        volumes:
-            - "./app:/app"
-        ports:
-            - "3003:3000"
-        depends_on:
-            - backend
     db:
-        image: mongo        
+        image: mongo:4.4.11
         container_name: yipc-mongo-db
         restart: always
         ports:
             - "28017:28017"
         volumes:
-            - /nfs/Data/yipc/db/:/data/db
+            - /nfs/Data/year-in-pixels-creator/db/:/data/db
