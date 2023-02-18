@@ -4,9 +4,9 @@ services:
         environment:
             ATLAS_URI: 'mongodb://ytdl-mongo-db:27017'
             PORT: 3031
-            SESSION_SECRET: 
-            VERIFICATION_EMAIL: 
-            VERIFICATION_PASSWORD: 
+            SESSION_SECRET:
+            VERIFICATION_EMAIL:
+            VERIFICATION_PASSWORD:
         build: .
         volumes:
             - ".:/app"

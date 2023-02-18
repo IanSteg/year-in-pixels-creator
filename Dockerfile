@@ -1,11 +1,10 @@
-FROM node:9
+FROM node:10.19.0
 WORKDIR /app
 COPY . .
 RUN npm install && \
     cd /app/app && \
-    npm install && \
-    printf "ls\nnpm start\ncd /app/app\nnpm start\n" > entrypoint.sh
+    npm install
 
 EXPOSE 3031
 
-CMD ["/bin/sh", "entrypoint.sh"]
+CMD ["npm", "start", "cd", "/app/app", "npm start"]
